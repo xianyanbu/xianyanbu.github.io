@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>君子慎独</title>
+  <subtitle>XianYan</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://xianyanbu.coding.me/"/>
+  <updated>2017-07-13T05:32:33.393Z</updated>
+  <id>http://xianyanbu.coding.me/</id>
+  
+  <author>
+    <name>XianYan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（六）- 从Github迁移到coding</title>
+    <link href="http://xianyanbu.coding.me/2017/07/13/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%85%AD%EF%BC%89%20-%20%E4%BB%8Egithub%E8%BF%81%E7%A7%BB%E5%88%B0coding/"/>
+    <id>http://xianyanbu.coding.me/2017/07/13/Hexo+Github搭建个人博客（六） - 从github迁移到coding/</id>
+    <published>2017-07-13T03:22:41.000Z</published>
+    <updated>2017-07-13T05:32:33.393Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于github的服务器是在国外的，所以访问速度会有点慢。还有一个问题，github的pages服务强制使用https服务，而Icarus主题中使用的分享功能和评论等功能调用的API使用的都是http服务，所以导致博客的部分功能用不了。<br><a id="more"></a></p>
+<h4 id="在github上运行出现的错误"><a href="#在github上运行出现的错误" class="headerlink" title="在github上运行出现的错误"></a>在github上运行出现的错误</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; Mixed Content: The page at <span class="string">'https://xianyanbu.github.io/'</span> was loaded over HTTPS, but requested an insecure script <span class="string">'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=416642'</span>. This request has been blocked; the content must be served over HTTPS.</div></pre></td></tr></table></figure>
+<p>这是因为在Icarus里我使用了百度分享的功能，github pages强制使用的是https协议，而百度分享的API使用的是http协议。同样有这个问题的还有评论功能。</p>
+<h4 id="coding是什么？"><a href="#coding是什么？" class="headerlink" title="coding是什么？"></a><a href="https://coding.net/" target="_blank" rel="external">coding</a>是什么？</h4><p>coding是国内的一个类似于github的代码托管网站，同样的提供了pages服务，所以和在github上托管博客是一样的。<br>coding和github相比，有以下两个不同：</p>
+<ul>
+<li>服务器在国内，访问速度相比github更快</li>
+<li>同时支持http和https服务，可以根据自己的需要来选择。这样的话我们就可以使用分享和评论功能了。</li>
+</ul>
+<h4 id="从github迁移到coding"><a href="#从github迁移到coding" class="headerlink" title="从github迁移到coding"></a>从github迁移到coding</h4><ul>
+<li>注册coding账号，在coding里创建项目，命名为 <code>your_name.coding.me</code></li>
+<li>在Hexo根目录下的 <code>_config.yml</code> 文件中将url的属性更改为 <code>http://your_name.coding.me</code></li>
+<li>将代码仓库的地址修改为你的coding的仓库地址</li>
+<li>如果之前有绑定百度统计之类的功能的话，需要在百度统计官网修改你网站地址。网站地址修改之后，你之前的百度统计的身份信息会发生变更，所以你需要在你的主题的配置文件里重新修改你的信息。</li>
+<li><p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器输入 <code>your_name.coding.me</code> 就可访问你的博客。怎么样，速度是不是快了很多，关键是分享和评论的功能也可以使用了。</p>
+</li>
+<li>bingo 迁移成功！</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于github的服务器是在国外的，所以访问速度会有点慢。还有一个问题，github的pages服务强制使用https服务，而Icarus主题中使用的分享功能和评论等功能调用的API使用的都是http服务，所以导致博客的部分功能用不了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="coding" scheme="http://xianyanbu.coding.me/tags/coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（五）- 文章发布</title>
+    <link href="http://xianyanbu.coding.me/2017/07/09/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89%20-%20%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83/"/>
+    <id>http://xianyanbu.coding.me/2017/07/09/Hexo+Github搭建个人博客（五） - 文章发布/</id>
+    <published>2017-07-09T08:49:41.000Z</published>
+    <updated>2017-07-13T05:10:20.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo写好的文章，我们需要发布到Github Pages，这样才能供其他人访问。<br><a id="more"></a></p>
+<h4 id="编写博文"><a href="#编写博文" class="headerlink" title="编写博文"></a>编写博文</h4><ul>
+<li>编写博文有两种方式<ul>
+<li>手动创建markdown文件，写好文章后，将文件移动到你当初建的博客站点文件夹下的source\ _posts目录下，一个md文件对应一篇博客文章。</li>
+<li>使用命令行常见markdown文件，然后在该文件内编辑文字。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new post <span class="string">"new article"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>之后在source/_posts目录下面，多了一个new-article.md的文件。</p>
+<h4 id="文章编译"><a href="#文章编译" class="headerlink" title="文章编译"></a>文章编译</h4><p>在Git Bash下执行下面的指令，将文章编译成静态网页。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure></p>
+<h4 id="文章预览"><a href="#文章预览" class="headerlink" title="文章预览"></a>文章预览</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>然后在浏览器中打开 <code>localhost:4000</code> 即可预览文章效果。</p>
+<h4 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这一步很重要，对本地仓库初始化。否则后面可能会出现很多问题。</span></div><div class="line">$ git init</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>执行该命令后，文章就同步到github pages上了。</p>
+<h4 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h4><h5 id="提示部署成功，但博客还是无法访问，页面出现404"><a href="#提示部署成功，但博客还是无法访问，页面出现404" class="headerlink" title="提示部署成功，但博客还是无法访问，页面出现404"></a>提示部署成功，但博客还是无法访问，页面出现404</h5><ul>
+<li>原因分析：这个时候，我们发现代码仓库里是一个文件夹 <code>.deploy.git</code> 而不是生成的 <code>public</code> 文件夹内的内容。</li>
+<li>解决方法：每次部署前先删除 <code>.deploy.git</code> 文件夹，然后再执行 <code>hexo d</code>。这样就能将 <code>public</code> 文件夹内的文件推送到代码仓库上。这时在浏览器打开博客地址就可以访问你的博客了。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo写好的文章，我们需要发布到Github Pages，这样才能供其他人访问。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（四）- 开始博文写作</title>
+    <link href="http://xianyanbu.coding.me/2017/07/09/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89%20-%20%E5%BC%80%E5%A7%8B%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/"/>
+    <id>http://xianyanbu.coding.me/2017/07/09/Hexo+Github搭建个人博客（四） - 开始博文写作/</id>
+    <published>2017-07-09T00:52:41.000Z</published>
+    <updated>2017-07-09T08:49:03.879Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo的文章在写作的时候需要严格的按照格式执行，否则文章会出现莫名的问题，甚至无法发布。</p>
+<ul>
+<li>主要内容<ul>
+<li>文章的格式</li>
+<li>生成摘要</li>
+<li>以HTML显示</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">title: 文章标题</div><div class="line">date: 时间（如，2017-07-09 09:52:41）</div><div class="line">banner: 文章封面</div><div class="line">thumbnail: 文章缩略图（在侧边栏显示）</div><div class="line"></div><div class="line"><span class="section">#文章所属分类</span></div><div class="line">categories:</div><div class="line"><span class="bullet">- </span>Hexo</div><div class="line"></div><div class="line"><span class="section">#文章标签</span></div><div class="line">tags:</div><div class="line"><span class="bullet">- </span>Hexo</div><div class="line"><span class="bullet">- </span>blog</div><div class="line"><span class="bullet">- </span>博客</div></pre></td></tr></table></figure>
+<p>注意点</p>
+<ul>
+<li>文章信息和文章正文 <code>---</code> 分割</li>
+<li>categories 存在多个内容的话，实际是按从上到下的层级关系表示的。如下所示，表示文章是在 Sports分类下的Baseball子类。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">categories:</div><div class="line"><span class="bullet">- </span>Sports</div><div class="line"><span class="bullet">- </span>Baseball</div></pre></td></tr></table></figure>
+<ul>
+<li>tags 存在多个内容的话，表示多个标签，不存在层级关系</li>
+<li>关键词必须顶格书写</li>
+</ul>
+<h4 id="生成摘要"><a href="#生成摘要" class="headerlink" title="生成摘要"></a>生成摘要</h4><p>默认情况下hexo博客的首页显示的是完整的文章，而文章比较长的时候这无疑会带来诸多不遍。 那怎么样才能只显示个摘要呢？</p>
+<p>方法其实很简单 – 只要加入一个<!-- more -->这样的占位符在文章正文里面即可。</p>
+<ul>
+<li><p>格式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这就是一个简介</div><div class="line">&lt;!-- more --&gt;</div><div class="line">这里更多的内容</div></pre></td></tr></table></figure>
+</li>
+<li><p>例子：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Hexo（Hexo.io）是一个免费静态博客开源程序。Hexo.io基于Node.js技术开发，为高效率静态博客程序。与Wordpress相比属于一款轻量级的博客系统，Hexo生成的静态网站可以放在任意空间，例如常见的PHP、ASP空间、FTP服务器、百度BAE、新浪SAE等空间。</div><div class="line">&lt;!-- more --&gt;</div><div class="line">文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分文章后部分……</div></pre></td></tr></table></figure>
+</li>
+<li><p>结果：<br><img src="http://ost1mi061.bkt.clouddn.com/2017-07-09_154548.png" alt=""></p>
+</li>
+</ul>
+<h4 id="hexo博客如何新建一个不依赖模板的HTML页面"><a href="#hexo博客如何新建一个不依赖模板的HTML页面" class="headerlink" title="hexo博客如何新建一个不依赖模板的HTML页面"></a>hexo博客如何新建一个不依赖模板的HTML页面</h4><p>如果你是不想hexo g时被模板改变你的html的话，可在在文件头加 <code>layout: false</code>。</p>
+<p>例如:新建一个404页面<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">layout: false</div><div class="line">title: "404"</div><div class="line"><span class="section">date: 2017-07-05 20:03:48</span></div><div class="line">---</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line"><span class="code">    &lt;meta charset="UTF-8" /&gt;</span></div><div class="line"><span class="code">    &lt;title&gt;404&lt;/title&gt;</span></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;404 Page Not Found&lt;/h1&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo的文章在写作的时候需要严格的按照格式执行，否则文章会出现莫名的问题，甚至无法发布。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主要内容&lt;ul&gt;
+&lt;li&gt;文章的格式&lt;/li&gt;
+&lt;li&gt;生成摘要&lt;/li&gt;
+&lt;li&gt;以HTML显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（三）- 主题配置</title>
+    <link href="http://xianyanbu.coding.me/2017/07/08/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%20-%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
+    <id>http://xianyanbu.coding.me/2017/07/08/Hexo+Github搭建个人博客（三） - 主题配置/</id>
+    <published>2017-07-08T05:52:41.000Z</published>
+    <updated>2017-07-09T08:48:50.239Z</updated>
+    
+    <content type="html"><![CDATA[<p>Icarus主题提供了很多可配置的参数，通过这些参数的配置可以让你的博客更加个性化。</p>
+<ul>
+<li>可配置的参数<ul>
+<li>头像、网站标题、作者、logo等</li>
+<li>评论</li>
+<li>分享</li>
+<li>侧边栏</li>
+<li>菜单栏</li>
+<li>…… </li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<p>更多内容参见<a href="https://github.com/ppoffice/hexo-theme-icarus/wiki" target="_blank" rel="external">Icarus的官方文档</a>。</p>
+<h4 id="网站相关信息配置"><a href="#网站相关信息配置" class="headerlink" title="网站相关信息配置"></a>网站相关信息配置</h4><blockquote>
+<p>该文档位于Hexo根目录下，文件名为【_config.yml】</p>
+</blockquote>
+<p>参数配置<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">title: 网站标题</div><div class="line">subtitle: 副标题</div><div class="line">description: 关于网站的描述</div><div class="line">author: 作者</div><div class="line">language: zh-CN</div><div class="line">url: 你要部署的地址，如 url: https://xianyanbu.github.io</div><div class="line">theme: icarus #选择主题</div><div class="line"><span class="section">#部署配置</span></div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository:</div><div class="line">  ## 这里填写在第一步创建的仓库的地址。</div><div class="line"><span class="code">    github: git@github.com:xianyanbu/xianyanbu.github.io.git</span></div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h4 id="跟主题相关的参数配置"><a href="#跟主题相关的参数配置" class="headerlink" title="跟主题相关的参数配置"></a>跟主题相关的参数配置</h4><blockquote>
+<p>该文档位于主题根目录下，而不是Hexo根目录下，文件名为【_config.yml】</p>
+</blockquote>
+<ul>
+<li><p><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Theme" target="_blank" rel="external">主题相关</a></p>
+<ul>
+<li>菜单栏</li>
+<li>个人信息</li>
+<li>…… </li>
+</ul>
+</li>
+<li><p><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Widgets" target="_blank" rel="external">小工具</a>（在侧边栏显示）</p>
+<ul>
+<li>标签</li>
+<li>归档</li>
+<li>分类</li>
+<li>……</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Comment" target="_blank" rel="external">评论系统</a></p>
+<ul>
+<li>多说</li>
+<li>友言</li>
+<li>Disqus</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Share" target="_blank" rel="external">分享设置</a></p>
+<ul>
+<li>default</li>
+<li>addtoany</li>
+<li>jiathis</li>
+<li>bdshare</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Plugins" target="_blank" rel="external">插件</a></p>
+<ul>
+<li>lightgallery</li>
+<li>Justified Gallery</li>
+<li>Google Analytics</li>
+<li>Baidu Analytics</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Icarus主题提供了很多可配置的参数，通过这些参数的配置可以让你的博客更加个性化。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可配置的参数&lt;ul&gt;
+&lt;li&gt;头像、网站标题、作者、logo等&lt;/li&gt;
+&lt;li&gt;评论&lt;/li&gt;
+&lt;li&gt;分享&lt;/li&gt;
+&lt;li&gt;侧边栏&lt;/li&gt;
+&lt;li&gt;菜单栏&lt;/li&gt;
+&lt;li&gt;…… &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（二）- 更换主题</title>
+    <link href="http://xianyanbu.coding.me/2017/07/08/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%20-%20%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/"/>
+    <id>http://xianyanbu.coding.me/2017/07/08/Hexo+Github搭建个人博客（二） - 更换主题/</id>
+    <published>2017-07-08T03:22:31.000Z</published>
+    <updated>2017-07-09T08:48:35.026Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo默认的主题是landscape，虽然这个主题已经很好了，但不一定能完全满足你的审美，这个时候我们想要一个更酷，更好看的主题。好在有许多开发者共享了很多很优秀的主题，这些主题我们都可以在<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官网</a>查看。<br>现在，我们来换掉默认主题吧。</p>
+<a id="more"></a>
+<p>这里以<a href="http://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="external">Icarus</a>这个主题的安装为例，其它主题的替换方式类似。Icarus主题的主页如下：<br><img src="http://ost1mi061.bkt.clouddn.com/icarus.png" alt="Icarus主题"></p>
+<h4 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h4><p>确认你的Hexo版本和Node版本符合Icarus的要求，进入Hexo根目录（例如我的为/e/blog），在Git Bash下执行以下命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git@github.com:ppoffice/hexo-theme-icarus.git themes/icarus</div></pre></td></tr></table></figure></p>
+<h4 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h4><p>在Hexo的根目录下安装下面的依赖，如果你已经安装过了，那就不用再次安装。</p>
+<p>Json-content<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-json-content --save</div></pre></td></tr></table></figure></p>
+<h4 id="开启标签页"><a href="#开启标签页" class="headerlink" title="开启标签页"></a>开启标签页</h4><p>如果没有开启的话，在导航栏点击点击【标签】的时候是会出现异常的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page tags</div></pre></td></tr></table></figure></p>
+<p>修改e:/blog/source/tags/index.md<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">layout: tags</div><div class="line">comments: false</div></pre></td></tr></table></figure></p>
+<h4 id="开启分类页"><a href="#开启分类页" class="headerlink" title="开启分类页"></a>开启分类页</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page categories</div></pre></td></tr></table></figure>
+<p>修改e:/blog/source/categories/index.md<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">layout: categories</div><div class="line">comments: false</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果导航栏上的其它栏目出现无法点击的情况，也需要这样操作。</p>
+</blockquote>
+<h4 id="体验新的主题"><a href="#体验新的主题" class="headerlink" title="体验新的主题"></a>体验新的主题</h4><p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
+<p>打开浏览器，访问localhost:4000，就可以看到更换后的Icarus主题了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo默认的主题是landscape，虽然这个主题已经很好了，但不一定能完全满足你的审美，这个时候我们想要一个更酷，更好看的主题。好在有许多开发者共享了很多很优秀的主题，这些主题我们都可以在&lt;a href=&quot;https://hexo.io/themes/&quot;&gt;Hexo官网&lt;/a&gt;查看。&lt;br&gt;现在，我们来换掉默认主题吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github搭建个人博客（一）- 搭建博客</title>
+    <link href="http://xianyanbu.coding.me/2017/07/08/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%20-%20%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://xianyanbu.coding.me/2017/07/08/Hexo+Github搭建个人博客（一） - 开始搭建博客/</id>
+    <published>2017-07-08T01:52:41.000Z</published>
+    <updated>2017-07-09T08:48:14.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo（Hexo.io）是一个免费静态博客开源程序。Hexo.io基于Node.js技术开发，为高效率静态博客程序。与Wordpress相比属于一款轻量级的博客系统，Hexo生成的静态网站可以放在任意空间，例如常见的PHP、ASP空间、FTP服务器、百度BAE、新浪SAE等空间。</p>
+<a id="more"></a>
+<h4 id="相关工具和环境准备"><a href="#相关工具和环境准备" class="headerlink" title="相关工具和环境准备"></a>相关工具和环境准备</h4><ul>
+<li>Github账号</li>
+<li>Git客户端</li>
+<li>Node.js</li>
+</ul>
+<p>关于这部分的使用安装这里不再赘述，百度或google都能找到相关资料。</p>
+<h4 id="在Github上创建仓库"><a href="#在Github上创建仓库" class="headerlink" title="在Github上创建仓库"></a>在Github上创建仓库</h4><p>在你的Github账户下，创建一个名为 <code>your_name.github.io</code> 的仓库，<code>your_name</code> 替换成你在github的用户名。</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>在Git Bash下使用下面的命令安装hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<h4 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h4><p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>hexo会自动安装所需的所有依赖文件，所有安装结束之后，文件的目录结构大致如下。</p>
+<p>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   └── _posts<br>└── themes</p>
+<ul>
+<li>_config.yml ：网站的配置信息。</li>
+<li>source 目录下面存放的是博客文章<ul>
+<li><strong>_posts</strong> ：目录下为已经发表的文章</li>
+<li><strong>_drafts</strong> ：目录下为草稿文章，一开始没有这个文件夹，因为还没有新建草稿文章。</li>
+</ul>
+</li>
+<li>themes 目录为你的博客网站使用的主题，程序默认的主题landscape，他长这样：</li>
+</ul>
+<h4 id="启动网站"><a href="#启动网站" class="headerlink" title="启动网站"></a>启动网站</h4><p>使用如下命令进入你的博客网站目录，例如我的目录为/e/blog。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /e/blog</div></pre></td></tr></table></figure></p>
+<p>执行如下命令启动Hexo服务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<p>这时候通过浏览器访问localhost:4000就可以看到博客网站的主页。</p>
+<p><img src="http://ost1mi061.bkt.clouddn.com/landscape.png" alt="默认主题"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo（Hexo.io）是一个免费静态博客开源程序。Hexo.io基于Node.js技术开发，为高效率静态博客程序。与Wordpress相比属于一款轻量级的博客系统，Hexo生成的静态网站可以放在任意空间，例如常见的PHP、ASP空间、FTP服务器、百度BAE、新浪SAE等空间。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://xianyanbu.coding.me/tags/Hexo/"/>
+    
+      <category term="blog" scheme="http://xianyanbu.coding.me/tags/blog/"/>
+    
+      <category term="博客" scheme="http://xianyanbu.coding.me/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
